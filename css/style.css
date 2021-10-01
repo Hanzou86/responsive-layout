@@ -9,14 +9,16 @@ body {
 }
 body,
 header,
+.top,
 .landing,
 main,
-.portfolio,
+#portfolio,
 .project,
 footer {
     display: flex;
     flex-flow: column;
     align-self: center;
+    align-items: center;
 }
 p {
     text-align: center;
@@ -45,6 +47,19 @@ h3 {
 h2 {
     font-size: 1rem;
 }
+
+nav li {
+    list-style: none;
+    display: block;
+    width: 100%;
+    padding: .7em 0;
+    margin-bottom: .3em;
+    background-color: white;
+    text-align: center;
+}
+a {
+    text-decoration: none;
+}
 /* ===============
 Header Styles
 =============== */
@@ -54,25 +69,25 @@ header {
     align-items: center;
     background-color: rgb(246, 246, 246);
 }
+.top {
+    width: 90%;
+}
 h1 {
     margin: .6em 0 .1em;
     font-size: 1.7rem;
 }
-nav ul {
+.main-nav {
+    width: 100%;
+}
+.main-nav ul {
     padding: 0;
 }
-nav {
-    width: 90%;
-
+.main-nav li:hover {
+    background-color: skyblue;
+    transition: .3s;
 }
-nav li {
-    list-style: none;
-    display: block;
-    width: 100%;
-    padding: .7em 0;
-    margin-bottom: .3em;
-    background-color: white;
-    text-align: center;
+.main-nav a:active {
+    color: white;
 }
 .landing {
     align-items: center;
@@ -115,20 +130,20 @@ footer {
     margin-top: 3em;
     background-color: rgb(246, 246, 246);
 }
-.contact h2 {
+#contact h2 {
     margin-top: 3.7em;
 }
-.contact {
+#contact {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.contact a {
+#contact a {
     font-weight: 400;
     text-decoration: none;
     color: rgb(124, 124, 124);
 }
-.contact address {
+#contact address {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -147,14 +162,27 @@ footer hr {
     justify-content: space-between;
     align-items: center;
 }
+.foot-nav {
+    display: none;
+}
 /* ===============
 Media Queries
 =============== */
-@media screen and (min-width: 320px) {
-    
-}
 @media screen and (min-width: 768px) {
-    nav ul,
+    .top {
+        display: flex;
+        justify-content: space-between;
+    }
+    .main-nav {
+        width: fit-content;
+        padding-left: 2em;
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: center;
+
+    }
     .landing {
         display: flex;
         flex-direction: row;
@@ -163,22 +191,85 @@ Media Queries
     nav li {
         width: fit-content;
         background-color:transparent;
-        margin-right: 1em;
+        margin-right: 1.5em;
+    }
+    .main-nav li:not(.no-hover):hover {
+
+    }
+    nav a:hover {
+        opacity: .7;
+        transition: .3s;
+    }
+    .foot-nav li:last-child {
+        margin-right: 0;
     }
     .landing p {
         order: -1;
         margin-top: 1em;
+        margin-right: .5em;
         align-self:flex-start;
     }
-    .portfolio {
+    #portfolio {
         flex-flow: row wrap;
+        align-items:center;
     }
     .project {
-        flex: 1;
-        width: 50%;
+        flex: 1 50%;
+        margin: 0 0 auto;
+        padding: .5em;
+
+    }
+    .project img {
+        margin-top: 0;
+    }
+    .contact p {
+        font-size: 1.3em;
+    }
+    .bottom a:nth-child(2) {
+        display: none;
+    }
+    .foot-nav {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+@media screen and (min-width: 1024px) {
+    body {
+        background-color: rgb(246, 246, 246);
+    }
+    .top {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 2em;
+        width: 90%;
+    }
+    .top h1 {
         margin: 0;
     }
+    .main-nav li{
+        margin: 0 1.5em 0 0;
+    }
+    .main-nav ul li:last-child {
+        margin-right: 0;
+    }
+    .profile {
+        max-width: 450px;
+    }
+    .foot-nav ul {
+        display: flex;
+    }
+    main {
+        background-color: white;
+    }
+    .project {
+        flex: 1 33%;
+    }
+
+}
 }
 /* ===============
 Notes:
+-Finish links and nav hover
+-Check for exceeds
 =============== */
