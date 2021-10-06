@@ -68,10 +68,11 @@ header {
     width: 100vw;
     padding-bottom: 1.2em;
     align-items: center;
-    background-color: rgb(246, 246, 246);
+    background-color:rgb(236, 205, 205);
 }
 .top {
     width: 90%;
+    background-color: ;
 }
 h1 {
     margin: .6em 0 .1em;
@@ -97,8 +98,11 @@ h1 {
 .profile {
     width: 65vw;
     margin-top: 1.2em;
-
 }
+.landing p {
+    color:rgb(66, 59, 59);
+}
+
 /* ===============
 Main Styles
 =============== */
