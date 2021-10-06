@@ -14,6 +14,7 @@ header,
 main,
 #portfolio,
 .project,
+#skills,
 footer {
     display: flex;
     flex-flow: column;
@@ -121,6 +122,49 @@ main h2 {
 .project p {
     color: rgb(92, 92, 92)
 }
+#skills {
+    width: 80%;
+    border-top: 2px solid darkgray;
+    border-bottom: 2px solid darkgray;
+    border-width: 90%;
+    padding: 2em 0;
+}
+.skills-bg {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    padding-top: 1em;
+    background-color: slategrey;
+}
+.skill {
+    min-width: 45%;
+    height: 20%;
+    margin-bottom: .3em;
+    border-radius: 25px;
+    font-size: 2em;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    box-shadow: 0 5px slategray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+.skill:hover {
+    transition: .3s;
+    box-shadow: 0 5px pink;
+}
+.html {
+    background-color:skyblue;
+}
+.css {
+    background-color: hsl(12, 100%, 65%);
+}
+.js {
+    background-color: rgb(143, 173, 185)
+}
 /* ===============
 Footer Styles
 =============== */
@@ -193,10 +237,10 @@ Media Queries
         background-color:transparent;
         margin-right: 1.5em;
     }
-    .main-nav li:not(.no-hover):hover {
-
+    .main-nav li:hover {
+        background-color: transparent;
     }
-    nav a:hover {
+    nav ul a:hover {
         opacity: .7;
         transition: .3s;
     }
@@ -218,6 +262,24 @@ Media Queries
         margin: 0 0 auto;
         padding: .5em;
 
+    }
+    .skills-bg {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+    .skill {
+        flex: 1;
+        height: 10vh;
+        font-size: 3em;
+        margin-right: .3em;
+        margin-bottom: .3em;
+    }
+    .html {
+        margin-left: .3em;
+    }
+    .js {
+        max-width: 50%;
     }
     .project img {
         margin-top: 0;
@@ -256,6 +318,11 @@ Media Queries
     .profile {
         max-width: 450px;
     }
+    .skill {
+        flex: 1 30%;
+        min-width: 0;
+    }
+
     .foot-nav ul {
         display: flex;
     }
