@@ -72,7 +72,6 @@ header {
 }
 .top {
     width: 90%;
-    background-color: ;
 }
 h1 {
     margin: .6em 0 .1em;
@@ -130,7 +129,6 @@ main h2 {
     width: 80%;
     border-top: 2px solid darkgray;
     border-bottom: 2px solid darkgray;
-    border-width: 90%;
     padding: 2em 0;
 }
 .skills-bg {
